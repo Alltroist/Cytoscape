@@ -1,0 +1,1506 @@
+<!DOCTYPE>
+
+<html>
+
+    <head>
+    <title>Визуализация</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+    <script src="https://raw.githubusercontent.com/cytoscape/cytoscape.js-euler/master/cytoscape-euler.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.0/bluebird.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <script src="https://unpkg.com/webcola/WebCola/cola.min.js"></script>
+    <!-- <script src="cytoscape-euler.js"></script> -->
+
+    <style>
+      body {
+        font-family: helvetica;
+        font-size: 14px;
+      }
+
+      #cy {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 100;
+        z-index: 999;
+      }
+
+      h1 {
+        opacity: 0.5;
+        font-size: 1em;
+      }
+    </style>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function(){
+
+        var cy = window.cy = cytoscape({
+        container: document.getElementById('cy'),
+
+            layout: {
+                name: 'euler',
+                randomize: true,
+                animate: false  
+            },
+
+            elements: {
+			  "nodes": [
+				{
+				  "data": {
+					"id": "EVIDENCE5083",
+					"labels": "OGE-YZ-5015 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG444",
+					"labels": "Алпелисиб noneff"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG449",
+					"labels": "Фулвестрант noneff"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "VARIANT24997",
+					"labels": "PIK3CA WT"
+				  },
+				  "classes": [
+					"VARIANT"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5052",
+					"labels": "CIVIC_3254 B"
+				  },
+				  "classes": [
+					"OTHER_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "ASSAY854",
+					"labels": "высокий индекс пролиферации Ki-67"
+				  },
+				  "classes": [
+					"ASSAY"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5082",
+					"labels": "OGE-YZ-5014 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG409",
+					"labels": "Бупарлисиб noneff"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5067",
+					"labels": "OGE_693 A"
+				  },
+				  "classes": [
+					"OTHER_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "VARIANT24944",
+					"labels": "CDH1 c.48+6C>T"
+				  },
+				  "classes": [
+					"VARIANT"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5041",
+					"labels": "JAX_10730 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG283",
+					"labels": "Абемациклиб eff_this"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "ASSAY852",
+					"labels": "ER полож. экспрессия"
+				  },
+				  "classes": [
+					"ASSAY"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "ASSAY853",
+					"labels": "PR полож. экспрессия"
+				  },
+				  "classes": [
+					"ASSAY"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5057",
+					"labels": "JAX_10731 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG447",
+					"labels": "Рибоциклиб eff_this"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG451",
+					"labels": "Анастрозол eff_this"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5056",
+					"labels": "OGE-YZ-508 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5048",
+					"labels": "OGE-YZ-504 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG172",
+					"labels": "Эверолимус eff_this"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG453",
+					"labels": "Экземестан eff_this"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5087",
+					"labels": "OGE-YZ-5019 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG411",
+					"labels": "Карбоплатин other"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "VARIANT24996",
+					"labels": "BRCA2 WT"
+				  },
+				  "classes": [
+					"VARIANT"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "VARIANT24995",
+					"labels": "BRCA1 WT"
+				  },
+				  "classes": [
+					"VARIANT"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5089",
+					"labels": "OGE-YZ-5020 B"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG448",
+					"labels": "Летрозол eff_this"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "VARIANT24998",
+					"labels": "ESR1 WT"
+				  },
+				  "classes": [
+					"VARIANT"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5072",
+					"labels": "JAX_1146 C"
+				  },
+				  "classes": [
+					"OTHER_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "VARIANT24978",
+					"labels": "AURKA p.F31I"
+				  },
+				  "classes": [
+					"VARIANT"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5088",
+					"labels": "OGE-YZ-5025 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG36",
+					"labels": "Тамоксифен other"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG277",
+					"labels": "Палбоциклиб other"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5038",
+					"labels": "JAX_10722 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5085",
+					"labels": "OGE-YZ-5017 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG44",
+					"labels": "Атезолизумаб noneff"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG527",
+					"labels": "Наб-паклитаксел noneff"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "ASSAY861",
+					"labels": "PD-L1 отсуств. экспресссии"
+				  },
+				  "classes": [
+					"ASSAY"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5051",
+					"labels": "JAX_5923 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5047",
+					"labels": "OGE-YZ-500 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG56",
+					"labels": "Лапатиниб noneff"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG289",
+					"labels": "Трастузумаб noneff"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "ASSAY865",
+					"labels": "HER2 отриц. экспрессия"
+				  },
+				  "classes": [
+					"ASSAY"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5037",
+					"labels": "OGE-YZ-503 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5092",
+					"labels": "OGE-YZ-5023 B"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5058",
+					"labels": "OGE-YZ-501 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5059",
+					"labels": "JAX_5895 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5039",
+					"labels": "JAX_5897 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5043",
+					"labels": "JAX_5894 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5045",
+					"labels": "JAX_5915 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5073",
+					"labels": "JAX_1147 C"
+				  },
+				  "classes": [
+					"OTHER_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5049",
+					"labels": "OGE-YZ-505 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5042",
+					"labels": "OGE_6139 B3"
+				  },
+				  "classes": [
+					"OTHER_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "ASSAY862",
+					"labels": "PTEN полож. экспрессия"
+				  },
+				  "classes": [
+					"ASSAY"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5036",
+					"labels": "OGE-YZ-502 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5086",
+					"labels": "OGE-YZ-5018 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG566",
+					"labels": "Талазопариб noneff"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5053",
+					"labels": "OGE-YZ-5010 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5081",
+					"labels": "OGE_7009 B4"
+				  },
+				  "classes": [
+					"OTHER_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "ASSAY866",
+					"labels": "low TMB (7.5 mut/Mb)"
+				  },
+				  "classes": [
+					"ASSAY"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5054",
+					"labels": "CIVIC_1960 B"
+				  },
+				  "classes": [
+					"OTHER_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5060",
+					"labels": "OGE_5106 B4"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG359",
+					"labels": "Капецитабин tox"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG360",
+					"labels": "5-Фторурацил tox"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "VARIANT24754",
+					"labels": "DPYD p.R29C"
+				  },
+				  "classes": [
+					"VARIANT"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5055",
+					"labels": "OGE-YZ-5013 B2"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG52",
+					"labels": "Пембролизумаб noneff"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5046",
+					"labels": "OGE_6209 B2"
+				  },
+				  "classes": [
+					"OTHER_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "ASSAY864",
+					"labels": "AR полож. экспрессия"
+				  },
+				  "classes": [
+					"ASSAY"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5074",
+					"labels": "JAX_1148 C"
+				  },
+				  "classes": [
+					"OTHER_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5084",
+					"labels": "OGE-YZ-5016 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "DRUG361",
+					"labels": "Олапариб noneff"
+				  },
+				  "classes": [
+					"DRUG"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5091",
+					"labels": "OGE-YZ-5022 B"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5044",
+					"labels": "JAX_5924 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5063",
+					"labels": "OGE_5051 B"
+				  },
+				  "classes": [
+					"OTHER_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "VARIANT24882",
+					"labels": "AKAP9 p.N2792S"
+				  },
+				  "classes": [
+					"VARIANT"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5040",
+					"labels": "CIVIC_1959 B"
+				  },
+				  "classes": [
+					"OTHER_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5050",
+					"labels": "OGE-YZ-5012 A"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5090",
+					"labels": "OGE-YZ-5021 B"
+				  },
+				  "classes": [
+					"PRED_EVIDENCE"
+				  ]
+				}
+			  ],
+			  "edges": [
+				{
+				  "data": {
+					"id": "EVIDENCE5083DRUG444",
+					"source": "EVIDENCE5083",
+					"target": "DRUG444"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5083DRUG449",
+					"source": "EVIDENCE5083",
+					"target": "DRUG449"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5083VARIANT24997",
+					"source": "EVIDENCE5083",
+					"target": "VARIANT24997"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5052ASSAY854",
+					"source": "EVIDENCE5052",
+					"target": "ASSAY854"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5082DRUG409",
+					"source": "EVIDENCE5082",
+					"target": "DRUG409"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5082DRUG449",
+					"source": "EVIDENCE5082",
+					"target": "DRUG449"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5082VARIANT24997",
+					"source": "EVIDENCE5082",
+					"target": "VARIANT24997"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5067VARIANT24944",
+					"source": "EVIDENCE5067",
+					"target": "VARIANT24944"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5041DRUG283",
+					"source": "EVIDENCE5041",
+					"target": "DRUG283"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5041DRUG449",
+					"source": "EVIDENCE5041",
+					"target": "DRUG449"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5041ASSAY852",
+					"source": "EVIDENCE5041",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5041ASSAY853",
+					"source": "EVIDENCE5041",
+					"target": "ASSAY853"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5057DRUG447",
+					"source": "EVIDENCE5057",
+					"target": "DRUG447"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5057DRUG451",
+					"source": "EVIDENCE5057",
+					"target": "DRUG451"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5057ASSAY853",
+					"source": "EVIDENCE5057",
+					"target": "ASSAY853"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5056DRUG283",
+					"source": "EVIDENCE5056",
+					"target": "DRUG283"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5056DRUG451",
+					"source": "EVIDENCE5056",
+					"target": "DRUG451"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5056ASSAY852",
+					"source": "EVIDENCE5056",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5048DRUG172",
+					"source": "EVIDENCE5048",
+					"target": "DRUG172"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5048DRUG453",
+					"source": "EVIDENCE5048",
+					"target": "DRUG453"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5048ASSAY852",
+					"source": "EVIDENCE5048",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5087DRUG411",
+					"source": "EVIDENCE5087",
+					"target": "DRUG411"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5087VARIANT24996",
+					"source": "EVIDENCE5087",
+					"target": "VARIANT24996"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5087VARIANT24995",
+					"source": "EVIDENCE5087",
+					"target": "VARIANT24995"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5089DRUG448",
+					"source": "EVIDENCE5089",
+					"target": "DRUG448"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5089VARIANT24998",
+					"source": "EVIDENCE5089",
+					"target": "VARIANT24998"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5072VARIANT24978",
+					"source": "EVIDENCE5072",
+					"target": "VARIANT24978"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5088DRUG36",
+					"source": "EVIDENCE5088",
+					"target": "DRUG36"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5088DRUG277",
+					"source": "EVIDENCE5088",
+					"target": "DRUG277"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5088ASSAY852",
+					"source": "EVIDENCE5088",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5038DRUG283",
+					"source": "EVIDENCE5038",
+					"target": "DRUG283"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5038ASSAY853",
+					"source": "EVIDENCE5038",
+					"target": "ASSAY853"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5085DRUG44",
+					"source": "EVIDENCE5085",
+					"target": "DRUG44"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5085DRUG527",
+					"source": "EVIDENCE5085",
+					"target": "DRUG527"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5085ASSAY861",
+					"source": "EVIDENCE5085",
+					"target": "ASSAY861"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5051DRUG277",
+					"source": "EVIDENCE5051",
+					"target": "DRUG277"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5051DRUG449",
+					"source": "EVIDENCE5051",
+					"target": "DRUG449"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5051ASSAY852",
+					"source": "EVIDENCE5051",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5047DRUG56",
+					"source": "EVIDENCE5047",
+					"target": "DRUG56"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5047DRUG289",
+					"source": "EVIDENCE5047",
+					"target": "DRUG289"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5047ASSAY865",
+					"source": "EVIDENCE5047",
+					"target": "ASSAY865"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5037DRUG447",
+					"source": "EVIDENCE5037",
+					"target": "DRUG447"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5037DRUG448",
+					"source": "EVIDENCE5037",
+					"target": "DRUG448"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5037ASSAY852",
+					"source": "EVIDENCE5037",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5092DRUG449",
+					"source": "EVIDENCE5092",
+					"target": "DRUG449"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5092VARIANT24998",
+					"source": "EVIDENCE5092",
+					"target": "VARIANT24998"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5058DRUG277",
+					"source": "EVIDENCE5058",
+					"target": "DRUG277"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5058DRUG448",
+					"source": "EVIDENCE5058",
+					"target": "DRUG448"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5058ASSAY852",
+					"source": "EVIDENCE5058",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5059DRUG283",
+					"source": "EVIDENCE5059",
+					"target": "DRUG283"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5059ASSAY852",
+					"source": "EVIDENCE5059",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5039DRUG277",
+					"source": "EVIDENCE5039",
+					"target": "DRUG277"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5039DRUG449",
+					"source": "EVIDENCE5039",
+					"target": "DRUG449"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5039ASSAY852",
+					"source": "EVIDENCE5039",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5043DRUG447",
+					"source": "EVIDENCE5043",
+					"target": "DRUG447"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5043DRUG451",
+					"source": "EVIDENCE5043",
+					"target": "DRUG451"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5043ASSAY852",
+					"source": "EVIDENCE5043",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5045DRUG451",
+					"source": "EVIDENCE5045",
+					"target": "DRUG451"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5045ASSAY852",
+					"source": "EVIDENCE5045",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5073VARIANT24978",
+					"source": "EVIDENCE5073",
+					"target": "VARIANT24978"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5049DRUG448",
+					"source": "EVIDENCE5049",
+					"target": "DRUG448"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5049DRUG453",
+					"source": "EVIDENCE5049",
+					"target": "DRUG453"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5049ASSAY852",
+					"source": "EVIDENCE5049",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5042ASSAY862",
+					"source": "EVIDENCE5042",
+					"target": "ASSAY862"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5036DRUG277",
+					"source": "EVIDENCE5036",
+					"target": "DRUG277"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5036DRUG449",
+					"source": "EVIDENCE5036",
+					"target": "DRUG449"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5036ASSAY852",
+					"source": "EVIDENCE5036",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5086DRUG566",
+					"source": "EVIDENCE5086",
+					"target": "DRUG566"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5086VARIANT24996",
+					"source": "EVIDENCE5086",
+					"target": "VARIANT24996"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5086VARIANT24995",
+					"source": "EVIDENCE5086",
+					"target": "VARIANT24995"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5053DRUG44",
+					"source": "EVIDENCE5053",
+					"target": "DRUG44"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5053DRUG527",
+					"source": "EVIDENCE5053",
+					"target": "DRUG527"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5053ASSAY861",
+					"source": "EVIDENCE5053",
+					"target": "ASSAY861"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5081ASSAY866",
+					"source": "EVIDENCE5081",
+					"target": "ASSAY866"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5054ASSAY853",
+					"source": "EVIDENCE5054",
+					"target": "ASSAY853"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5060DRUG359",
+					"source": "EVIDENCE5060",
+					"target": "DRUG359"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5060DRUG360",
+					"source": "EVIDENCE5060",
+					"target": "DRUG360"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5060VARIANT24754",
+					"source": "EVIDENCE5060",
+					"target": "VARIANT24754"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5055DRUG52",
+					"source": "EVIDENCE5055",
+					"target": "DRUG52"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5055ASSAY861",
+					"source": "EVIDENCE5055",
+					"target": "ASSAY861"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5046ASSAY864",
+					"source": "EVIDENCE5046",
+					"target": "ASSAY864"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5074VARIANT24978",
+					"source": "EVIDENCE5074",
+					"target": "VARIANT24978"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5084DRUG361",
+					"source": "EVIDENCE5084",
+					"target": "DRUG361"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5084VARIANT24996",
+					"source": "EVIDENCE5084",
+					"target": "VARIANT24996"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5084VARIANT24995",
+					"source": "EVIDENCE5084",
+					"target": "VARIANT24995"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5091DRUG453",
+					"source": "EVIDENCE5091",
+					"target": "DRUG453"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5091VARIANT24998",
+					"source": "EVIDENCE5091",
+					"target": "VARIANT24998"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5044DRUG277",
+					"source": "EVIDENCE5044",
+					"target": "DRUG277"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5044DRUG449",
+					"source": "EVIDENCE5044",
+					"target": "DRUG449"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5044ASSAY852",
+					"source": "EVIDENCE5044",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5063VARIANT24882",
+					"source": "EVIDENCE5063",
+					"target": "VARIANT24882"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5040ASSAY853",
+					"source": "EVIDENCE5040",
+					"target": "ASSAY853"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5050DRUG449",
+					"source": "EVIDENCE5050",
+					"target": "DRUG449"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5050ASSAY852",
+					"source": "EVIDENCE5050",
+					"target": "ASSAY852"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5090DRUG451",
+					"source": "EVIDENCE5090",
+					"target": "DRUG451"
+				  }
+				},
+				{
+				  "data": {
+					"id": "EVIDENCE5090VARIANT24998",
+					"source": "EVIDENCE5090",
+					"target": "VARIANT24998"
+				  }
+				}
+			  ]
+			},
+
+            style: [
+              {
+                selector: 'node',
+                style: {
+                  'label': 'data(labels)'
+                }
+              },
+
+              {
+                selector: '.VARIANT',
+                style: {
+                  'shape': 'rectangle',
+                  'background-color': '#7fb800'
+                }
+              },
+
+              {
+                selector: '.PRED_EVIDENCE',
+                style: {
+                  'shape': 'star',
+                  'background-color': '#0d2c54'
+                }
+              },
+
+              {
+                selector: '.OTHER_EVIDENCE',
+                style: {
+                  'shape': 'vee',
+                  'background-color': '#f6511d'
+                }
+              },
+
+              {
+                selector: '.DRUG',
+                style: {
+                  'shape': 'ellipse',
+                  'background-color': '#ffb400'
+                }
+              },
+
+              {
+                selector: '.ASSAY',
+                style: {
+                  'shape': 'diamond',
+                  'background-color': '#00a6ed'
+                }
+              }
+
+            ]
+            });
+            cy.on('click', 'node', function(evt){
+                cy.remove(this)
+            });
+        });
+
+    </script>
+
+
+    </head>
+
+    <body>
+        <h1>ВИЗУАЛИЗАЦИЯ</h1>
+        <div id="cy"></div> 
+    </body>
+
+</html>
